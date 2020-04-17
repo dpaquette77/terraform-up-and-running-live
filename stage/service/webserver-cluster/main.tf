@@ -14,7 +14,7 @@ terraform {
 }
 
 module "webserver-cluster" {
-    source = "github.com/dpaquette77/terraform-up-and-running-modules//services/webserver-cluster?ref=v0.0.2"
+    source = "github.com/dpaquette77/terraform-up-and-running-modules//services/webserver-cluster?ref=v0.0.3"
    
     cluster_name = "webservers-stage"
     db_remote_state_bucket = "dpaquette-terraform-up-and-running-state"
