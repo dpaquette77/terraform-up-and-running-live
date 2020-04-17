@@ -14,7 +14,7 @@ terraform {
 }
 
 module "webserver-cluster" {
-    source = "../../../modules/services/webserver-cluster"
+    source = "github.com/dpaquette77/terraform-up-and-running-modules//services/webserver-cluster?ref=v0.0.2"
    
     cluster_name = "webservers-stage"
     db_remote_state_bucket = "dpaquette-terraform-up-and-running-state"
@@ -22,4 +22,9 @@ module "webserver-cluster" {
     instance_type = "t2.micro"
     max_size = 3
     min_size = 2
+
+    asg_custom_tags = {
+        Owner = "team-foo"
+        DeployedBy = "terraform"
+    }
 }
