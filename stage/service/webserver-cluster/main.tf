@@ -21,6 +21,7 @@ module "webserver-cluster" {
     db_remote_state_key = "stage/services/data-stores/mysql/terraform.tfstate"
     instance_type = "t2.micro"
     webserver_ami = "ami-0c55b159cbfafe1f0"
+    webserver_text = "hello using webserver_text variable!"
     max_size = 3
     min_size = 2
 
