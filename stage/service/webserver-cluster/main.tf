@@ -14,12 +14,13 @@ terraform {
 }
 
 module "webserver-cluster" {
-    source = "github.com/dpaquette77/terraform-up-and-running-modules//services/webserver-cluster?ref=v0.0.3"
+    source = "github.com/dpaquette77/terraform-up-and-running-modules//services/webserver-cluster?ref=v0.0.9"
    
     cluster_name = "webservers-stage"
     db_remote_state_bucket = "dpaquette-terraform-up-and-running-state"
     db_remote_state_key = "stage/services/data-stores/mysql/terraform.tfstate"
     instance_type = "t2.micro"
+    webserver_ami = "ami-0c55b159cbfafe1f0"
     max_size = 3
     min_size = 2
 
